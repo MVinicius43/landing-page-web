@@ -1,32 +1,104 @@
-import { Flex,
-         Text,
-         Img, 
-         Box,
-         Button,
-         useDisclosure
-        } from '@chakra-ui/react'
+import {
+  Flex,
+  Text,
+  Img, 
+  Button,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { SignInModal } from './SignInModal'
+import { ButtonMotion } from './Button'
 
 import home from '../public/home.svg'
+
+import Section from './Section'
 
 export function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Flex bg="primary.200" flexDirection="column">
-      <Flex justifyContent="center" alignItems="center" >
-        <Box color="white" flexDirection="column" marginTop="2%" marginLeft="9%" width="40%" >
-          <Text fontSize={{ base: 24, md: 20, lg: 50 }} fontWeight="bold">
-            Landing Page
-          </Text>
-          <Text fontSize={{ base: 24, md: 20, lg: 20 }}>
-            Economize seu dinheiro capturando o lead certo com um design inovador e sem enrolação!
-          </Text>
-          <Button onClick={onOpen} width="180px" marginLeft="9%" marginTop="20%" variant="outline" borderRadius="10px" borderWidth="3px" borderBottomLeftRadius="0px" borderColor="#1D0E9F" color="white" fontFamily="heading" p="25px" >Vamos conversar!</Button>
-        </Box>
+    <Flex
+      bg="linear-gradient(89.06deg, #6357FF 13.97%, #00005D 99.03%)"
+      flexDirection="column"
+    >
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Flex
+          color="white"
+          flexDirection="column"
+          marginTop="2%"
+          marginLeft="70px"
+          position="absolute"
+        >
+          <Section delay={1.2}>
+            <Text
+              fontFamily="Montserrat"
+              fontSize={{ base: 24, md: 20, lg: 60 }}
+              fontWeight="700"
+            >
+              LANDING PAGE
+            </Text>
+          </Section>
 
-        <Img src={home} width="100%" height="100%"/>
-        <SignInModal isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
+            <Flex
+              width="40%"
+              marginLeft="0.5%"
+            >
+              <Section delay={1.4}>
+                <Text
+                  fontSize={{ base: 24, md: 20, lg: 20 }}
+                  fontFamily="Lato"
+                >
+                  Economize seu dinheiro capturando o lead certo com um design inovador e sem enrolação!
+                </Text> 
+              </Section>
+            </Flex>
+            
+            <Section delay={1.6}>
+              <ButtonMotion>
+                <Button
+                  onClick={onOpen}
+                  width="32%"
+                  marginLeft="0.5%"
+                  marginTop="5%"
+                  variant="outline"
+                  borderRadius="10px"
+                  borderWidth="3px"
+                  borderBottomLeftRadius="0px"
+                  borderStartColor="#1D0E9F"
+                  borderBlockStartColor="#1D0E9F"
+                  borderRightColor="#1D0E9F"
+                  borderBottomColor="#1D0E9F"
+                  color="white"
+                  fontFamily="Montserrat"
+                  fontWeight="600"
+                  p="25px"
+                  _hover={{
+                    color: "white",
+                    bg:"#1D0E9F",
+                    transition: '1s'
+                  }}
+                >
+                  Vamos conversar!
+                </Button>
+              </ButtonMotion>
+            </Section>
+        </Flex>
+
+        <Img
+          src={home}
+          marginTop="23px"
+          width="80%"
+          height="80%"
+          mixBlendMode={'hard-light'}
+          marginLeft="317px"
+        />
+        <SignInModal
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onClose={onClose}
+        />
       </Flex>
     </Flex>
   )

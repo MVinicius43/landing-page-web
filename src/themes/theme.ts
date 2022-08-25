@@ -7,13 +7,11 @@ export const theme = extendTheme({
       200: "#6357FF"
     }
   },
-  fonts: {
-    heading: `'Montserrat'`
-  },
   breakpoints: {
     sm: '30em',
     md: '48em',
-    lg: '50em',
+    lg: '68.375em',
     xl: '80em',
+    '2xl': '96em',
   }
 })

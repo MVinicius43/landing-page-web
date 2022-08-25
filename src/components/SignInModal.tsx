@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Button,
   Modal,
@@ -10,7 +11,11 @@ import {
   Stack,
   Input,
 } from "@chakra-ui/react";
-import { useState } from "react";
+
+import signInApi from '../api/signIn'
+
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 interface ISignInModal {
   isOpen: boolean,
@@ -22,7 +27,25 @@ export function SignInModal({ isOpen, onOpen, onClose }: ISignInModal) {
   const [name, setName] = useState('')
   const [company, setCompany] = useState('')
   const [email, setEmail] = useState('')
-  const [whatsapp, setWhatsapp] = useState('')
+  const [contact, setContact] = useState('')
+
+  const sendData = () => new Promise<void>((resolve, reject) => {
+    const data = {
+      name,
+      company,
+      email,
+      contact
+    }
+
+    signInApi.saveData(data).then(() => {
+      toast.success('Dados cadastrados com sucesso!')
+      resolve()
+    }).catch(e => {
+      toast.error(e.response.data)
+    })
+
+    onClose()
+  })
   
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -35,12 +58,12 @@ export function SignInModal({ isOpen, onOpen, onClose }: ISignInModal) {
             <Input variant='flushed' value={name} onChange={e => { setName(e.target.value) }} placeholder='Nome:'></Input>
             <Input variant='flushed' value={company} onChange={e => { setCompany(e.target.value) }} placeholder='Empresa:'></Input>
             <Input variant='flushed' type={'email'} value={email} onChange={e => { setEmail(e.target.value) }} placeholder='E-mail:'></Input>
-            <Input variant='flushed' type={"number"} value={whatsapp} onChange={e => { setWhatsapp(e.target.value) }} placeholder='Whatsapp:'></Input>
+            <Input variant='flushed' type={"number"} value={contact} onChange={e => { setContact(e.target.value) }} placeholder='Whatsapp:'></Input>
           </Stack>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme='blue' mr={3} onClick={async () => { await sendData() }}>
               Cadastre-se
             </Button>
           </ModalFooter>

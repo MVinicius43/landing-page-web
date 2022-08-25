@@ -8,13 +8,16 @@ import { NavBar } from "./components/NavBar"
 import { Services } from "./components/Services"
 import { HowItWorks } from "./components/HowItWorks"
 import { Benefits } from "./components/Benefits"
-import { FinalMessage } from "./components/FinalMessage"
+import { ContactUs } from "./components/ContactUs"
+import SectionMotion from "./components/Section"
 
 function App() {
 
   return (
     <ScrollingProvider>
-      <NavBar />
+      <SectionMotion delay={2}>
+        <NavBar />
+      </SectionMotion>
       <Section id="Home">
         <Home />
       </Section>
@@ -30,7 +33,9 @@ function App() {
       <Section id="Vantagens">
         <Benefits />
       </Section>
-      <FinalMessage />
+      <Section id="Contate-nos">
+        <ContactUs />
+      </Section>
     </ScrollingProvider>
   )
 }

@@ -8,13 +8,13 @@ import {
 import { SignInModal } from './SignInModal'
 import { ButtonMotion } from './Button'
 
-import home from '../public/home.svg'
+import home from '../public/home2.png'
 
 import Section from './Section'
 
 export function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-
+  
   return (
     <Flex
       bg="linear-gradient(89.06deg, #6357FF 13.97%, #00005D 99.03%)"

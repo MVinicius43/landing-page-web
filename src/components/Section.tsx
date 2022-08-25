@@ -13,14 +13,16 @@ const StyledDiv = chakra(motion.div, {
   }
 })
 
-const Section = ({ children, delay }: ISection) => (
-  <StyledDiv
-    initial={{ y: 10, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={`${delay}s`}
-  >
-    {children}
-  </StyledDiv>
-)
+const Section = ({ children, delay }: ISection) => {
+  return (
+    <StyledDiv
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={`${delay}s`}
+    >
+      {children}
+    </StyledDiv>
+  )
+}
 
 export default Section

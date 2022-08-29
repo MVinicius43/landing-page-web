@@ -12,7 +12,6 @@ import { ContactUs } from "./components/ContactUs"
 import SectionMotion from "./components/Section"
 
 function App() {
-
   return (
     <ScrollingProvider>
       <SectionMotion delay={2}>

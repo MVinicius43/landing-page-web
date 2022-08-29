@@ -6,13 +6,16 @@ import {
 } from '@chakra-ui/react'
 
 import aboutus from '../public/aboutus.svg'
-import bg from '../public/Component.svg'
 
 export function Aboutus() {
 
   return (
     <Flex
-      backgroundImage={bg}
+      background="linear-gradient(
+        to left,
+        #818181 2%,
+        #FFFFFF 80%
+      )"
       flexDirection={{ base: 'column', md: 'row' }}
       height={'100vh'}
       width="100%"

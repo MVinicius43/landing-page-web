@@ -2,7 +2,8 @@ import {
   Flex,
   Text,
   Img, 
-  Box
+  Box,
+  useMediaQuery
  } from '@chakra-ui/react'
 
 import site from '../public/site2.svg'
@@ -13,6 +14,7 @@ import email from '../public/email2.svg'
 import suporttec from '../public/suportetec2.svg'
 
 export function Benefits() {
+  const [isMobile] = useMediaQuery("(max-height: 738px)")
 
   return (
     <Flex
@@ -135,52 +137,56 @@ export function Benefits() {
               </Text>
             </Box>
           </Flex>
-          <Flex
-            flexDirection={'column'}
-            marginTop="50px"
-          >
+          
+          {
+            !isMobile &&
             <Flex
-              flexDirection="row"
-              alignItems={'center'}
+              flexDirection={'column'}
+              marginTop="50px"
             >
-              <Img
-                src={agil}
-                width='46px'
-                height='46px'
-              />
-              <Text
-                marginTop="14px"
-                marginLeft={'9px'}
-                lineHeight={"29.26px"}
-                textAlign="center"
-                fontSize="20px"
-                color="#FFFFFF"
-                fontFamily="Montserrat"
-                fontWeight={"600"}
+              <Flex
+                flexDirection="row"
+                alignItems={'center'}
               >
-                Agilidade na entrega
-              </Text>
+                <Img
+                  src={agil}
+                  width='46px'
+                  height='46px'
+                />
+                <Text
+                  marginTop="14px"
+                  marginLeft={'9px'}
+                  lineHeight={"29.26px"}
+                  textAlign="center"
+                  fontSize="20px"
+                  color="#FFFFFF"
+                  fontFamily="Montserrat"
+                  fontWeight={"600"}
+                >
+                  Agilidade na entrega
+                </Text>
+              </Flex>
+              <Box
+                width={'225px'}
+                height="109px"
+                marginLeft={'30px'}
+                display={'flex'}
+                alignItems="center"
+              >
+                <Text
+                  marginLeft={'9px'}
+                  lineHeight={"24.38px"}
+                  textAlign="start"
+                  fontSize="20px"
+                  color="#FFFFFF"
+                  fontFamily="Lato"
+                  fontWeight={"600"}
+                >
+                  Entrega da Landing Page em 8 dias.
+                </Text>
+              </Box>
             </Flex>
-            <Box
-              width={'225px'}
-              height="109px"
-              marginLeft={'30px'}
-              display={'flex'}
-              alignItems="center"
-            >
-              <Text
-                marginLeft={'9px'}
-                lineHeight={"24.38px"}
-                textAlign="start"
-                fontSize="20px"
-                color="#FFFFFF"
-                fontFamily="Lato"
-                fontWeight={"600"}
-              >
-                Entrega da Landing Page em 8 dias.
-              </Text>
-            </Box>
-          </Flex>
+          }
         </Flex>
 
         <Flex
@@ -279,53 +285,158 @@ export function Benefits() {
               </Text>
             </Box>
           </Flex>
+          
+          {
+            !isMobile &&
+            <Flex
+              flexDirection={'column'}
+              marginTop="50px"
+            >
+              <Flex
+                flexDirection="row"
+                alignItems={'center'}
+              >
+                <Img
+                  src={suporttec}
+                  width='46px'
+                  height='46px'
+                />
+                <Text
+                  marginTop="14px"
+                  marginLeft={'9px'}
+                  lineHeight={"29.26px"}
+                  textAlign="center"
+                  fontSize="22px"
+                  color="#FFFFFF"
+                  fontFamily="Montserrat"
+                  fontWeight={"600"}
+                >
+                  Suporte técnico
+                </Text>
+              </Flex>
+              <Box
+                width={'225px'}
+                height="109px"
+                marginLeft={'30px'}
+                display={'flex'}
+                alignItems="center"
+              >
+                <Text
+                  marginLeft={'9px'}
+                  lineHeight={"24.38px"}
+                  textAlign="start"
+                  fontSize="20px"
+                  color="#FFFFFF"
+                  fontFamily="Lato"
+                  fontWeight={"600"}
+                >
+                  Equipe atenciosa e competente.
+                </Text>
+              </Box>
+            </Flex>
+          }
+        </Flex>
+
+        {
+          isMobile &&
           <Flex
-            flexDirection={'column'}
-            marginTop="50px"
+            marginLeft={{ base: '24px', md: '40px', lg: '166px' }}
+            marginTop={{ base: '24px', md: '40px', lg: '65px' }}
+            flexDirection="column"
           >
             <Flex
-              flexDirection="row"
-              alignItems={'center'}
+              flexDirection={'column'}
             >
-              <Img
-                src={suporttec}
-                width='46px'
-                height='46px'
-              />
-              <Text
-                marginTop="14px"
-                marginLeft={'9px'}
-                lineHeight={"29.26px"}
-                textAlign="center"
-                fontSize="22px"
-                color="#FFFFFF"
-                fontFamily="Montserrat"
-                fontWeight={"600"}
+              <Flex
+                flexDirection="row"
+                alignItems={'center'}
               >
-                Suporte técnico
-              </Text>
+                <Img
+                  src={agil}
+                  width='46px'
+                  height='46px'
+                />
+                <Text
+                  marginTop="14px"
+                  marginLeft={'9px'}
+                  lineHeight={"29.26px"}
+                  textAlign="center"
+                  fontSize="20px"
+                  color="#FFFFFF"
+                  fontFamily="Montserrat"
+                  fontWeight={"600"}
+                >
+                  Agilidade na entrega
+                </Text>
+              </Flex>
+              <Box
+                width={'225px'}
+                height="109px"
+                marginLeft={'30px'}
+                display={'flex'}
+                alignItems="center"
+              >
+                <Text
+                  marginLeft={'9px'}
+                  lineHeight={"24.38px"}
+                  textAlign="start"
+                  fontSize="20px"
+                  color="#FFFFFF"
+                  fontFamily="Lato"
+                  fontWeight={"600"}
+                >
+                  Entrega da Landing Page em 8 dias.
+                </Text>
+              </Box>
             </Flex>
-            <Box
-              width={'225px'}
-              height="109px"
-              marginLeft={'30px'}
-              display={'flex'}
-              alignItems="center"
+            <Flex
+              flexDirection={'column'}
+              marginTop="50px"
             >
-              <Text
-                marginLeft={'9px'}
-                lineHeight={"24.38px"}
-                textAlign="start"
-                fontSize="20px"
-                color="#FFFFFF"
-                fontFamily="Lato"
-                fontWeight={"600"}
+              <Flex
+                flexDirection="row"
+                alignItems={'center'}
               >
-                Equipe atenciosa e competente.
-              </Text>
-            </Box>
+                <Img
+                  src={suporttec}
+                  width='46px'
+                  height='46px'
+                />
+                <Text
+                  marginTop="14px"
+                  marginLeft={'9px'}
+                  lineHeight={"29.26px"}
+                  textAlign="center"
+                  fontSize="22px"
+                  color="#FFFFFF"
+                  fontFamily="Montserrat"
+                  fontWeight={"600"}
+                >
+                  Suporte técnico
+                </Text>
+              </Flex>
+              <Box
+                width={'225px'}
+                height="109px"
+                marginLeft={'30px'}
+                display={'flex'}
+                alignItems="center"
+              >
+                <Text
+                  marginLeft={'9px'}
+                  lineHeight={"24.38px"}
+                  textAlign="start"
+                  fontSize="20px"
+                  color="#FFFFFF"
+                  fontFamily="Lato"
+                  fontWeight={"600"}
+                >
+                  Equipe atenciosa e competente.
+                </Text>
+              </Box>
+            </Flex>
           </Flex>
-        </Flex>
+        }
       </Flex>
     </Flex>
   )

@@ -6,15 +6,19 @@ import {
 } from '@chakra-ui/react'
 
 import services from '../public/services.png'
-import bg from '../public/bg_roxo_white.svg'
 
 export function Services() {
 
   return (
     <Flex
-      backgroundImage={bg}
-      flexDirection="row"
-      height={'100vh'}
+    background="linear-gradient(
+      to left,
+      #6357FF 2%,
+      #FFFFFF 85%
+    )"
+    flexDirection={{ base: 'column', md: 'row' }}
+    height={'100vh'}
+    width="100%"
     >
       <Box
         marginLeft={"4.37rem"}

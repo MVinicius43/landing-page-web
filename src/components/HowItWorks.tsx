@@ -18,6 +18,7 @@ export function HowItWorks() {
       backgroundColor={'#FFFFFF'}
       flexDirection="column"
       height={'100vh'}
+      width="100%"
     >
       <Box
         marginLeft={"4.37rem"}

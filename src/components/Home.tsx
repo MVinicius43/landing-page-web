@@ -4,6 +4,7 @@ import {
   Img, 
   Button,
   useDisclosure,
+  useMediaQuery
 } from '@chakra-ui/react'
 import { SignInModal } from './SignInModal'
 import { ButtonMotion } from './Button'
@@ -12,13 +13,18 @@ import home from '../public/home2.png'
 
 import Section from './Section'
 
+import { ToastContainer } from 'react-toastify'
+
 export function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   
+  const [mdScreen] = useMediaQuery("(min-width: 1485px)")
+
   return (
     <Flex
       bg="linear-gradient(89.06deg, #6357FF 13.97%, #00005D 99.03%)"
       flexDirection="column"
+      width="100%"
     >
       <Flex
         justifyContent="space-between"
@@ -89,8 +95,8 @@ export function Home() {
         <Img
           src={home}
           marginTop="23px"
-          width="80%"
-          height="80%"
+          width={mdScreen ? "80%" : "74.9%"}
+          height={mdScreen ? "80%" : "74.9%"}
           mixBlendMode={'hard-light'}
           marginLeft="317px"
         />
@@ -100,6 +106,7 @@ export function Home() {
           onClose={onClose}
         />
       </Flex>
+      <ToastContainer />
     </Flex>
   )
 }

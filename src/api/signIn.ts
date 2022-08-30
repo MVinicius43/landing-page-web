@@ -16,7 +16,7 @@ export default {
     instance.post(
       '/users', data
     ).then(response => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         resolve(response.data)
       } else {
         reject(new Error('CouldNotConnect'))

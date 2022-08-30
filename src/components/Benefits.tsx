@@ -22,6 +22,7 @@ export function Benefits() {
         flexDirection="column"
         background={'#6357FF'}
         height={{md: "100%", lg: "100vh"}}
+        width="100%"
     >
       <Box
         marginLeft={"4.37rem"}
@@ -42,7 +43,7 @@ export function Benefits() {
         width={'80%'}
       >
         <Flex
-          marginLeft={{ base: '24px', md: '40px', lg: '166px' }}
+          marginLeft={{ base: '24px', md: '40px', lg: isMobile ? '100px' : '166px' }}
           marginTop={{ base: '24px', md: '40px', lg: '65px' }}
           flexDirection="column"
         >
@@ -190,7 +191,7 @@ export function Benefits() {
         </Flex>
 
         <Flex
-          marginLeft={{ base: '24px', md: '40px', lg: '166px' }}
+          marginLeft={{ base: '24px', md: '40px', lg: isMobile ? '100px' : '166px' }}
           marginTop={{ base: '24px', md: '40px', lg: '65px' }}
           flexDirection="column"
         >
@@ -340,7 +341,7 @@ export function Benefits() {
         {
           isMobile &&
           <Flex
-            marginLeft={{ base: '24px', md: '40px', lg: '166px' }}
+            marginLeft={{ base: '24px', md: '40px', lg: isMobile ? '100px' : '166px' }}
             marginTop={{ base: '24px', md: '40px', lg: '65px' }}
             flexDirection="column"
           >

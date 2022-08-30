@@ -15,6 +15,7 @@ export function ContactUs() {
       height="100vh"
       background={"#FFFFFF"}
       flexDirection="column"
+      width="100%"
     >
       <Flex
         flexDirection={"column"}

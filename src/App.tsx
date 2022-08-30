@@ -1,8 +1,4 @@
 import { Home } from "./components/Home"
-import {
-  ScrollingProvider,
-  Section  
-} from 'react-scroll-section'
 import { Aboutus } from "./components/AboutUs"
 import { NavBar } from "./components/NavBar"
 import { Services } from "./components/Services"
@@ -11,9 +7,14 @@ import { Benefits } from "./components/Benefits"
 import { ContactUs } from "./components/ContactUs"
 import SectionMotion from "./components/Section"
 
+import {
+  ScrollingProvider,
+  Section  
+} from 'react-scroll-section'
+
 function App() {
   return (
-    <ScrollingProvider>
+    <ScrollingProvider >
       <SectionMotion delay={2}>
         <NavBar />
       </SectionMotion>

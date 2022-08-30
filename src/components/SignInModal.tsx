@@ -14,7 +14,7 @@ import {
 
 import signInApi from '../api/signIn'
 
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 interface ISignInModal {
@@ -36,12 +36,12 @@ export function SignInModal({ isOpen, onOpen, onClose }: ISignInModal) {
       email,
       contact
     }
-
+    
     signInApi.saveData(data).then(() => {
       toast.success('Dados cadastrados com sucesso!')
       resolve()
-    }).catch(e => {
-      toast.error(e.response.data)
+    }).catch(() => {
+      toast.error('Erro ao enviar os dados...')
     })
 
     onClose()
@@ -67,7 +67,7 @@ export function SignInModal({ isOpen, onOpen, onClose }: ISignInModal) {
               Cadastre-se
             </Button>
           </ModalFooter>
-        </ModalContent>
+        </ModalContent>  
     </Modal>
   )
 }

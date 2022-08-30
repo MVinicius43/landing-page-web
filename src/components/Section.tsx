@@ -19,6 +19,7 @@ const Section = ({ children, delay }: ISection) => {
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={`${delay}s`}
+      width="100%"
     >
       {children}
     </StyledDiv>

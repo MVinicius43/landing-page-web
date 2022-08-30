@@ -192,7 +192,7 @@ export function Benefits() {
 
         <Flex
           marginLeft={{ base: '24px', md: '40px', lg: isMobile ? '100px' : '166px' }}
-          marginTop={{ base: '24px', md: '40px', lg: '65px' }}
+          marginTop={{ base: '24px', md: '40px', lg: isMobile ? '80px' : '65px' }}
           flexDirection="column"
         >
           <Flex
@@ -254,7 +254,7 @@ export function Benefits() {
                 height='46px'
               />
               <Text
-                marginTop="14px"
+                marginTop="20px"
                 marginLeft={'9px'}
                 lineHeight={"29.26px"}
                 textAlign="center"

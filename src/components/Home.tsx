@@ -18,7 +18,8 @@ import { ToastContainer } from 'react-toastify'
 export function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   
-  const [mdScreen] = useMediaQuery("(min-width: 1485px)")
+  const [smScreen] = useMediaQuery("(max-width: 1300px)")
+  const [mdScreen] = useMediaQuery("(max-width: 1366px)")
 
   return (
     <Flex
@@ -95,8 +96,8 @@ export function Home() {
         <Img
           src={home}
           marginTop="23px"
-          width={mdScreen ? "80%" : "74.9%"}
-          height={mdScreen ? "80%" : "74.9%"}
+          width={smScreen ? "74.9%" : mdScreen ? "76.5%" : "80%"}
+          height={smScreen ? "74.9%" : mdScreen ? "76.5%" : "80%"}
           mixBlendMode={'hard-light'}
           marginLeft="317px"
         />
